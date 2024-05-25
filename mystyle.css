@@ -1,0 +1,123 @@
+﻿/* BACKGROUND */
+body {
+    background: #7F1400;
+    width: 100%;
+}
+
+body, nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.invisible {
+    display: none;
+}
+
+.alltop {
+    background-color: #008049;
+    z-index: 2;
+}
+
+.hud::after {
+    content: "";
+    display: table;
+    clear: both;
+    z-index: 2;
+}
+
+.hud {
+    background-color: #008049;
+    z-index: 2;
+    position: relative;
+    width: auto;
+    border-left: 12.5vw solid #008049;
+    border-right: 12.5vw solid #008049;
+}
+
+    .hud nav ul li {
+        list-style-type: none;
+    }
+
+.profile img {
+    transition: transform 0.3s ease;
+    transform: scale(1.5);
+}
+
+.profile {
+    background-color: #008049;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+    width: auto;
+}
+
+.gameslink {
+    float: left;
+    box-sizing: border-box;
+    margin-left: 2%;
+    margin-top: 1%;
+    background: white;
+    padding: 0.5%;
+    width: 18%;
+    text-align: center;
+}
+
+.homelink, .updateslink, .bloglink, .artslink {
+    float: left;
+    box-sizing: border-box;
+    margin-left: 2%;
+    margin-top: 1%;
+    padding: 0.5%;
+    width: 18%;
+    text-align: center;
+}
+
+.twitterlink, .youtubelink, .instagramlink {
+    float: left;
+    box-sizing: border-box;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+    .twitterlink img, .youtubelink img, .instagramlink img {
+        width: 50px;
+        height: 50px;
+    }
+
+.gameslink a {
+    text-decoration-line: none;
+    font-family: 'Trebuchet MS';
+    font-size: xx-large;
+    color: black;
+    position: static;
+}
+
+.homelink a, .bloglink a, .updateslink a, .artslink a {
+    text-decoration-line: none;
+    font-family: 'Trebuchet MS';
+    font-size: xx-large;
+    color: white;
+}
+
+.content {
+    border-left: 12vw solid black;
+    border-right: 12vw solid black;
+    border-bottom: 25vw solid black;
+    overflow: auto;
+}
+
+@media only screen and (max-width: 1080px) {
+    .content {
+        border: none;
+    }
+}
+
+main {
+    margin-top: 2.5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+.game-container {
+    width: auto;
+}
