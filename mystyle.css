@@ -125,16 +125,11 @@ main {
     .buttons {
         display: flex;
         align-items: center;
-        margin-left: 5%;
-        margin-right: 5%;
+        justify-content: center;
+        margin-top: 10px;
     }
-    #upbutton {
-        padding: 20%;
-        font-size: 20px;
-    }
-    #downbutton {
-        padding: 20%;
-        font-size: 20px;
+    #upbutton, #downbutton {
+        font-size: 180px; /* Ajuste o tamanho da fonte conforme necessário */
     }
 }
 
