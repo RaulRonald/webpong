@@ -129,11 +129,11 @@ main {
         margin-right: 5%;
     }
     #upbutton {
-        padding: 250px 200px;
+        padding: 20%;
         font-size: 20px;
     }
     #downbutton {
-        padding: 250px 200px;
+        padding: 20%;
         font-size: 20px;
     }
 }
