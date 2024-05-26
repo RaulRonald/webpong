@@ -6,16 +6,28 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         this.setOrigin(0, 0);
         const up = document.getElementById('upbutton');
         const down = document.getElementById('downbutton');
+        let intervalId;
         let ref = this;
-        this.uping = false;
-        this.downing = false;
-        up.addEventListener('click', function () {
-            ref.uping = true;
-            ref.downing = false;
+        this.up = false;
+        up.addEventListener('touchstart', function () {
+            intervalId = setInterval(function () {
+                ref.up = true;
+            }, 100);
         });
-        down.addEventListener('click', function () {
-            ref.uping = false;
-            ref.downing = true;
+        up.addEventListener('touchend', function () {
+            // Para a repetição quando o botão "up" for solto
+            clearInterval(intervalId);
+            ref.up = false;
+        });
+        down.addEventListener('touchstart', function () {
+            intervalId = setInterval(function () {
+                ref.down = true;
+            }, 100);
+        });
+        down.addEventListener('touchend', function () {
+            // Para a repetição quando o botão "up" for solto
+            clearInterval(intervalId);
+            ref.down = false;
         });
     }
     update(ball) {
@@ -26,10 +38,10 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         this.col(ball);
     }
     move(scene) {
-        if (scene.cursors.up.isDown || this.uping == true) {
+        if (scene.cursors.up.isDown || this.up == true) {
             this.y -= 2;
         }
-        if (scene.cursors.down.isDown || this.downing == true) {
+        if (scene.cursors.down.isDown || this.down == true) {
             this.y += 2;
         }
         if (this.y <= 0) {
