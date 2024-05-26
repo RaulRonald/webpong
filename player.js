@@ -8,18 +8,43 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         const down = document.getElementById('downbutton');
         let ref = this;
         this.up = false;
-        up.addEventListener('touchstart', function () {
+        const startMovingUp = () => {
             ref.up = true;
-        });
-        up.addEventListener('touchend', function () {
-            ref.up = false;
-        });
-        down.addEventListener('touchstart', function () {
-            ref.down = true;
-        });
-        down.addEventListener('touchend', function () {
             ref.down = false;
-        });
+        };
+
+        const stopMovingUp = () => {
+            ref.up = false;
+        };
+
+        const startMovingDown = () => {
+            ref.down = true;
+            ref.up = false;
+        };
+
+        const stopMovingDown = () => {
+            ref.down = false;
+        };
+
+        // Adicionar eventos de touch
+        up.addEventListener('touchstart', startMovingUp);
+        up.addEventListener('touchend', stopMovingUp);
+        down.addEventListener('touchstart', startMovingDown);
+        down.addEventListener('touchend', stopMovingDown);
+
+        // Adicionar eventos de mouse
+        up.addEventListener('mousedown', startMovingUp);
+        up.addEventListener('mouseup', stopMovingUp);
+        down.addEventListener('mousedown', startMovingDown);
+        down.addEventListener('mouseup', stopMovingDown);
+
+        // Adicionar eventos de mouseleave para garantir que o movimento pare quando o mouse sai do botão
+        up.addEventListener('mouseleave', stopMovingUp);
+        down.addEventListener('mouseleave', stopMovingDown);
+
+        // Adicionar eventos de touchcancel para garantir que o movimento pare se o toque for cancelado
+        up.addEventListener('touchcancel', stopMovingUp);
+        down.addEventListener('touchcancel', stopMovingDown);
     }
     update(ball) {
         //PLAYER CONFIGS
