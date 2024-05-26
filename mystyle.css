@@ -107,12 +107,6 @@ body, nav ul {
     overflow: auto;
 }
 
-@media only screen and (max-width: 1080px) {
-    .content {
-        border: none;
-    }
-}
-
 main {
     margin-top: 2.5%;
     margin-bottom: 5%;
@@ -121,3 +115,26 @@ main {
 .game-container {
     width: auto;
 }
+.buttons {
+    display: none;
+}
+@media only screen and (max-width: 1080px) {
+    .content {
+        border: none;
+    }
+    .buttons {
+        display: flex;
+        align-items: center;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #upbutton {
+        padding: 250px 200px;
+        font-size: 20px;
+    }
+    #downbutton {
+        padding: 250px 200px;
+        font-size: 20px;
+    }
+}
+
