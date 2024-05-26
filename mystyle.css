@@ -128,7 +128,7 @@ main {
         justify-content: center;
         margin-top: 10px;
     }
-    #upbutton, #downbutton {
+    .upbutton, .downbutton {
         padding: 240px 240px;
     }
 }
