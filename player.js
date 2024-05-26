@@ -4,6 +4,28 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         super(scene, x, y, texture, frame);
         scene.add.existing(this); // Adiciona o sprite à cena
         this.setOrigin(0, 0);
+        const up = document.getElementById('upbutton');
+        const down = document.getElementById('downbutton');
+        let intervalId;
+        let ref = this;
+        up.addEventListener('touchstart', function () {
+            intervalId = setInterval(function () {
+                ref.y -= 16;
+            }, 100);
+        });
+        up.addEventListener('touchend', function () {
+            // Para a repetição quando o botão "up" for solto
+            clearInterval(intervalId);
+        });
+        down.addEventListener('touchstart', function () {
+            intervalId = setInterval(function () {
+                ref.y += 16;
+            }, 100);
+        });
+        down.addEventListener('touchend', function () {
+            // Para a repetição quando o botão "up" for solto
+            clearInterval(intervalId);
+        });
     }
     update(ball) {
         //PLAYER CONFIGS
