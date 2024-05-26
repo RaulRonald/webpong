@@ -130,7 +130,6 @@ main {
     }
     #upbutton, #downbutton {
         font-size: 180px; /* Ajuste o tamanho da fonte conforme necessário */
-        user-select: none;
     }
 }
 
