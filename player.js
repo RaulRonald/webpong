@@ -6,27 +6,18 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         this.setOrigin(0, 0);
         const up = document.getElementById('upbutton');
         const down = document.getElementById('downbutton');
-        let intervalId;
         let ref = this;
         this.up = false;
         up.addEventListener('touchstart', function () {
-            intervalId = setInterval(function () {
-                ref.up = true;
-            }, 100);
+            ref.up = true;
         });
         up.addEventListener('touchend', function () {
-            // Para a repetição quando o botão "up" for solto
-            clearInterval(intervalId);
             ref.up = false;
         });
         down.addEventListener('touchstart', function () {
-            intervalId = setInterval(function () {
-                ref.down = true;
-            }, 100);
+            ref.down = true;
         });
         down.addEventListener('touchend', function () {
-            // Para a repetição quando o botão "up" for solto
-            clearInterval(intervalId);
             ref.down = false;
         });
     }
